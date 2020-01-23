@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Voice based Gmail | Welcome</title>
+    <!--adding bootstrap, custom css and fontawesome files-->
+    <link href="{% static 'vmail/bootstrap-4/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'vmail/css/styles.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <!--Contact Form-->
+            <form class="margin" action="{% url 'home' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="emailinput" class="col-2 col form-label">Email</label>
+                    <div class="col-10">
+                        <input name="email" type="email" class="form-control" id="emailinput" placeholder="name@example.com">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="subjectinput" class="col-2 col form-label">Subject</label>
+                    <div class="col-10">
+                        <input name="subject" type="text" class="form-control" id="subjectinput">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="messageinput" class="col-2 col form-label">Message</label>
+                    <div class="col-10">
+                        <textarea name="message" class="form-control" id="messageinput"></textarea>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-primary float-right btn-md">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
