@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>V-mail</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+        <link rel="stylesheet" href="styles.css">
+        <style type="text/css">
+            body {
+                 background-image: url("https://images.pexels.com/photos/1040499/pexels-photo-1040499.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+                 background-color: #cccccc;
+                 -webkit-background-size: cover;
+                 -moz-background-size: cover;
+                 -o-background-size: cover;
+                 background-size: cover;
+                }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+
+            <h1 style="color:#babcbf; font-size: 3rem; text-transform: uppercase; border-color: #2c3e50;"  class="outset">Voice Based Email</h1>
+            <p class="page-description" style="color:#babcbf; font-size: 0.8rem; text-transform: uppercase; border-color: #2c3e50;">A web app that allows you to send and recive email just by your voice</p>
+            <p><a class="tz-link" href="howToUse.txt">Read this "How to use" </a></p>
+
+            <h3 class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3> 
+
+            <div class="app"> 
+                <h3 style="color:#babcbf; font-size: 1.9rem; text-transform: uppercase; border-color: #2c3e50;">Subject</h3>
+                <div class="input-single">
+                    <form id="formInput" action="subject.php" method="POST"></form>
+                    <textarea id="note-textarea" name="subject" placeholder="" rows="1" form="formInput" form="formInput"></textarea>
+                </div>         
+                <button id="start-record-btn" title="Start Recording" style="background-color: #008CBA;">Start Recognition</button>
+                <button id="pause-record-btn" title="Pause Recording" style="background-color: #008CBA;">Pause Recognition</button>
+                <button id="form-btn" form="formInput"  style="background-color: #008CBA;" >Next</button>
+                
+               
+                <p id="recording-instructions" style="color:#babcbf; font-size: 0.8rem; text-transform: uppercase; border-color: #2c3e50;">Press the <strong>Start Recognition</strong> button and allow access.</p>
+                
+                <h3 style="color:#babcbf; font-size: 1.5rem; text-transform: uppercase; border-color: #2c3e50;">My Email</h3>
+                <ul id="notes">
+                    <li>
+                        <p class="no-notes" style="color:#babcbf; font-size: 0.8rem; text-transform: uppercase; border-color: #2c3e50;">You don't have any email yet.</p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <script src="https://code.responsivevoice.org/responsivevoice.js?key=5p1BQH0l"></script>
+        <script> responsiveVoice.speak("Enter Subject"); </script>
+
+    </body>
+</html>
+
+
